@@ -31,6 +31,7 @@ def readData(access_token, item):
             headers = {
                 'Authorization': authoriation
             }
+
             api_request = f"/books/v3/items?organization_id=762023225&name={item_name}"
             conn.request("GET", api_request, headers=headers)
             res = conn.getresponse()
