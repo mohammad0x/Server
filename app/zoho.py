@@ -24,9 +24,6 @@ def readData(access_token, item):
     res =requests.get(api_request, headers=headers)
     try:
         result = json.loads(res.text)
-        print('result1')
-        print(result)
-        print('result2')
         code = result["code"]
         if code == 57:
             access_token = getAccessToken(refresh_token, url_zoho)
