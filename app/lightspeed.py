@@ -71,8 +71,8 @@ def getListItem(access_token, zoho_access_token, light_url):
     try:
         result = json.loads(response.text)
         next = json.loads(response.text)['@attributes']['next']
-        print(next)
         for i in range(len(result['Item'])):
+            time.sleep(1)
             dic = {
                 'name': result['Item'][i]['description'],
                 'qty': result['Item'][i]['ItemShops']['ItemShop'][0]['qoh'],
@@ -80,7 +80,6 @@ def getListItem(access_token, zoho_access_token, light_url):
                 'price': result['Item'][i]['Prices']['ItemPrice'][0]['amount']
             }
             print(i)
-            print(dic)
             readData(zoho_access_token, dic)
         return next, access_token
     except:
@@ -116,8 +115,8 @@ def getOtherListItem(urlNext, access_token, zoho_access_token):
                 , 'upc': result['Item'][i]['upc'],
                 'price': result['Item'][i]['Prices']['ItemPrice'][0]['amount']
             }
+            time.sleep(1)
             print(i)
-            print(dic)
             readData(zoho_access_token, dic)
         return next, access_token
     except:

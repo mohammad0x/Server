@@ -78,6 +78,7 @@ def update(item_id, access_token_update, defaultCost, qty, rate):
 
     res = conn.getresponse()
     data = res.read()
+    print('update')
     print(data)
     return HttpResponse(data)
 
@@ -109,6 +110,7 @@ def createItem(name, defaultCost, qty, rate, access_token):
 
     try:
         response = requests.post(url, data=data, headers=headers)
+        print('create')
         print(response.text)
         return HttpResponse(response.text)
     except:
