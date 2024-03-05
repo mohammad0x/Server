@@ -33,7 +33,7 @@ def getAccessToken(client_id_zoho, client_secret_zoho, refresh_token, url_zoho):
     except:
         return HttpResponse('getAccessToken error')
 
-def getRefreshToken(zoho_access_token, light_url):
+def getRefreshToken():
     payload1 = {
         "client_id": client_id_light,
         "client_secret": client_secret_light,
@@ -79,13 +79,11 @@ def getListItem(access_token, zoho_access_token, light_url):
                 'cost': result['Item'][i]['defaultCost'],
                 'price': result['Item'][i]['Prices']['ItemPrice'][0]['amount']
             }
-            print(i)
             readData(zoho_access_token, dic)
+        print('complete')
         return next, access_token
     except:
         return HttpResponse('getListItem error')
-
-
 def getOtherListItem(urlNext, access_token, zoho_access_token):
     header = {
         "authorization": f"Bearer {access_token}",
@@ -116,8 +114,8 @@ def getOtherListItem(urlNext, access_token, zoho_access_token):
                 'price': result['Item'][i]['Prices']['ItemPrice'][0]['amount']
             }
             time.sleep(1)
-            print(i)
             readData(zoho_access_token, dic)
+        print('complete')
         return next, access_token
     except:
         return HttpResponse('getOtherListItem error')

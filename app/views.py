@@ -13,7 +13,7 @@ def run1(request):
     light_url = "https://api.lightspeedapp.com/API/V3/Account/292471/Item.json?load_relations=all"
     global zoho_access_token
     zoho_access_token = getAccessToken(client_id_zoho, client_secret_zoho, refresh_token, url_zoho)
-    light_access_token = getRefreshToken(zoho_access_token, light_url)
+    light_access_token = getRefreshToken()
     data2 = getListItem(light_access_token, zoho_access_token, light_url)
     time.sleep(2)
     data3 = getOtherListItem(data2[0], data2[1], zoho_access_token)
@@ -38,7 +38,7 @@ def run2(request):
     light_url = 'https://api.lightspeedapp.com/API/V3/Account/292471/Item.json?load_relations=all&sort=itemID&limit=100&after=WzExMzI1XQ%3D%3D'
     global zoho_access_token
     zoho_access_token = getAccessToken(client_id_zoho, client_secret_zoho, refresh_token, url_zoho)
-    light_access_token = getRefreshToken(zoho_access_token, light_url)
+    light_access_token = getRefreshToken()
     data2 = getListItem(light_access_token, zoho_access_token, light_url)
     data3 = getOtherListItem(data2[0], data2[1], zoho_access_token)
 
