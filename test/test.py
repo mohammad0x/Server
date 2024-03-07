@@ -5,7 +5,7 @@ from datetime import datetime
 
 
 def send_request1():
-    url = 'http://127.0.0.1:8000/admin'
+    url = 'http://127.0.0.1:8000/run1'
 
     response = requests.get(url)
 
@@ -16,7 +16,7 @@ def send_request1():
 
 
 def send_request2():
-    url = 'http://127.0.0.1:8000/'
+    url = 'http://127.0.0.1:8000/run2'
 
     response = requests.get(url)
 
