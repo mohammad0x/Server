@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .lightspeed import *
 from django.http import HttpResponse
+from .custom import *
 # Create your views here.
 
 
@@ -50,3 +51,20 @@ def run2(request):
         else:
             data4 = getOtherListItem(data4[0], data4[1],zoho_access_token)
     return HttpResponse('ok2')
+
+def custom(request):
+    if request.method == 'POST':
+        item_id = request.POST['system_id']
+
+        url_zoho = 'https://accounts.zoho.com/oauth/v2/token'
+        client_id_zoho = '1000.GJIMCDUESNK18PS1SH8XK4XL6MF2FF'
+        client_secret_zoho = '1e8274522ba8d68f2598828cd50cfc471c9ea879f3'
+        refresh_token = '1000.4de57c2028639b91c64bba71ed0357c0.c5bd35b7e5791620fe352b5c50fe1c7f'
+
+
+        global zoho_access_token
+        zoho_access_token = getAccessToken(client_id_zoho, client_secret_zoho, refresh_token, url_zoho)
+        light_access_token = getRefreshToken()
+        getItem(light_access_token, zoho_access_token, item_id)
+
+    return render(request, 'custom.html')
