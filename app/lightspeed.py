@@ -6,13 +6,13 @@ from .zoho import *
 from django.http import HttpResponse
 
 url_light = "https://cloud.lightspeedapp.com/oauth/access_token.php"
-client_id_light = "83bec51c4baccc96a28a7f7ca353acc8246c66dee16f24d3a186b0af079dbdcb"
-client_secret_light = "2ac17e023778d1fa56b68dc9a9065b0b165a6788484e8a0bcf75e95d22311451"
+client_id_light = "***************************************"
+client_secret_light = "**************************************"
 
 url_zoho = 'https://accounts.zoho.com/oauth/v2/token'
-client_id_zoho = '1000.GJIMCDUESNK18PS1SH8XK4XL6MF2FF'
-client_secret_zoho = '1e8274522ba8d68f2598828cd50cfc471c9ea879f3'
-refresh_token = '1000.4de57c2028639b91c64bba71ed0357c0.c5bd35b7e5791620fe352b5c50fe1c7f'
+client_id_zoho = '1000.********************'
+client_secret_zoho = '******************************'
+refresh_token = '1000.*******.***********************'
 
 conn = http.client.HTTPSConnection("www.zohoapis.com")
 
