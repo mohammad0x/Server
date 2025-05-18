@@ -1,5 +1,7 @@
 # Mecko Integration Platform
 
+http://mekcosupply.com
+
 This Django-based project was developed for **Mecko**, a Canadian company, to create a seamless integration between **Lightspeed** (a POS system) and **Zoho** (a suite of business applications). The platform automates data synchronization and facilitates real-time communication between the two systems.
 
 ## Features
